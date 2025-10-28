@@ -1,0 +1,8 @@
+email: ivandry@gmail.com
+pass : password
+
+email: galang@gmail.com
+pass : galang12
+
+email: admin@gmail.com
+pass : admin123
