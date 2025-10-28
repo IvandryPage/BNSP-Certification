@@ -1,22 +1,14 @@
 <?php
 require_once APPROOT . "/includes/functions.php";
-
-require_once APPROOT . "/includes/functions.php";
-
-$articles = [];
-
-if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST['search'])) {
-  $search = trim($_POST['search']);
-  $articles = searchArticle($search);
-} else {
-  $articles = getAllArticles();
-}
-
+$user_id = $_SESSION['user_id'];
+$articles = getArticleByUser($user_id);
 ?>
 
-
-<div class="container mx-auto py-8 px-4">
-  <h2 class="text-3xl font-bold text-gray-800 mb-6">WELCOME TO VETERAN BOARD</h2>
+<div class="flex justify-start m-4">
+  <a href="?page=article_add"
+    class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow transition-colors">
+    + Create Article
+  </a>
 </div>
 
 <div class="container mx-auto py-8 px-4">
@@ -27,11 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST['search'])) {
           <div class="p-4 flex flex-col flex-grow">
             <h5 class="text-lg font-semibold text-gray-800 mb-2"><?= $article['title'] ?></h5>
             <p class="text-gray-600 flex-grow"><?= substr($article['body'], 0, 100) ?></p>
-            <form action="" method="post" class="mt-4">
-              <button type="submit" class="text-black-500 hover:text-red-600 transition-colors text-xl">
-                Love <?= getLikesCount($article['id'])[0]['count'] ?>
-              </button>
-            </form>
+            <a href="?page=article_edit&id=<?= $article['id'] ?>">
+              Edit
+            </a>
+            <a href="?page=dashboard&action=delete_article&id=<?= $article['id'] ?>">
+              Delete
+            </a>
           </div>
         </a>
       </div>

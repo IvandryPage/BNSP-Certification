@@ -31,6 +31,8 @@ function db_execute($connection, $sql_query, $types = "", $params = [])
     mysqli_stmt_bind_param($statement, $types, ...$params);
   }
   $success_status = mysqli_stmt_execute($statement);
+  var_dump($success_status);
+
   mysqli_stmt_close($statement);
   return $success_status;
 }

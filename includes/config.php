@@ -6,4 +6,4 @@ define("DB_PASS", "");
 define("DB_NAME", "bnsp");
 
 define("URLROOT", "https://localhost/bnsp");
-define("SITENAME", "Junior Web Programmer");
+define("SITENAME", "VeteranBoard - Junior Web Programmer");
