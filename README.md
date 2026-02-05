@@ -1,29 +1,28 @@
-### DOKUMENTASI WEBSITE SERTIFIKASI JUNIOR WEB PROGRAMMER
+# JUNIOR WEB PROGRAMMER // CERTIFICATION PROJECT
 
-## Tujuan
+<div align="center">
+  <p>✦ <i>Official web application developed for the Junior Web Programmer Certification standards.</i> ✦</p>
+</div>
 
-Dokumen ini akan menjelaskan cara menjalankan website di komputer lokal menggunakan XAMPP
+---
 
-## Teknologi yang digunakan
+### // OVERVIEW
+This system was engineered to meet the technical requirements of the **Junior Web Programmer Certification**. It demonstrates core competency in building functional, secure, and data-driven web applications using the PHP ecosystem.
 
-- PHP
-- XAMPP (MySQL & Apache)
-- Browser (Chrome, Edge, Brave, Opera, etc)
-- Code Editor
+The project focuses on implementing robust CRUD operations, session management, and relational database integration within a localized server environment.
 
-## Setup Database
+### // TECHNICAL STACK
+* **Server-Side** | PHP (Procedural/OOP)
+* **Data Layer** | MySQL / MariaDB (Relational)
+* **Environment** | XAMPP (Apache Server)
+* **Frontend** | HTML5, CSS3, JavaScript
 
-1. Buka phpMyAdmin
-2. Buat database baru (nama bebas)
-3. Impor file SQL yang ada di repository
-4. Ubah konfigurasi `includes/db.php`:
+### // DATABASE PROVISIONING
+To initialize the system's data layer, follow these protocols:
 
-```
-$define("DB_NAME", "[ISI SESUAI NAMA DATABASE]")
-```
-
-## Cara Menjalankan Website
-
-1. Pindahkan folder utama project ke `../XAMPP/htdocs`
-2. Jalankan XAMPP (MySQL dan Apache)
-3. Akses website melalui browser dengan alamat https://localhost/nama-project
+1. **Access phpMyAdmin** via your local XAMPP dashboard.
+2. **Create a New Schema** (Recommended name: `db_certification` or as preferred).
+3. **Import Source**: Locate the `.sql` file in the repository and execute the import.
+4. **Configuration**: Synchronize the connection logic in `includes/db.php`:
+   ```php
+   define("DB_NAME", "your_database_name");
